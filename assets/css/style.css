@@ -338,7 +338,6 @@ p {
   display: grid;
   grid-template-columns: 1.1fr 1fr;
   gap: 22px;
-  align-items: start;
 }
 
 .panel h3 {
