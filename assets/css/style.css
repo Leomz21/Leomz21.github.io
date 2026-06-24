@@ -278,8 +278,8 @@ p {
 }
 
 .hero-avatar {
-  width: 88px;
-  height: 88px;
+  width: 108px;
+  height: 108px;
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid #fff;
