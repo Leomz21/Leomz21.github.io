@@ -33,7 +33,7 @@ El sitio se publica automáticamente con GitHub Pages al hacer *push* a la rama 
 
 ## Contacto
 
-- **Correo:** leomolinazapata@gmail.com
+- **Correo:** leonormolinza@gmail.com
 - **GitHub:** [@Leomz21](https://github.com/Leomz21)
 - **LinkedIn:** [Leonor Molina](https://www.linkedin.com/in/leonor-molina-76074a2a3/)
 
