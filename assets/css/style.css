@@ -267,14 +267,13 @@ p {
 }
 
 .hero-simple {
-  max-width: 840px;
+  max-width: 980px;
 }
 
-.hero-profile-inline {
+.hero-layout {
   display: flex;
   align-items: center;
-  gap: 14px;
-  margin-bottom: 22px;
+  gap: 36px;
 }
 
 .hero-avatar {
@@ -282,8 +281,14 @@ p {
   height: 170px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid #fff;
+  border: 4px solid #fff;
   box-shadow: 0 0 0 1px var(--lilac-line), var(--shadow-sm);
+  flex-shrink: 0;
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 0;
 }
 
 .hero-mini-label {
@@ -291,6 +296,7 @@ p {
   align-items: center;
   min-height: 38px;
   padding: 0 16px;
+  margin: 14px 0 0;
   background: var(--lilac-soft);
   border: 1px solid var(--lilac-line);
   border-radius: 999px;
@@ -300,16 +306,16 @@ p {
 }
 
 .hero-subtitle {
-  max-width: 720px;
+  max-width: 640px;
   font-size: 1.12rem;
-  margin-top: 22px;
+  margin-top: 16px;
 }
 
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  margin-top: 30px;
+  margin-top: 26px;
 }
 
 /* ===== Tarjetas base ===== */
@@ -860,5 +866,16 @@ p {
 
   .hero {
     padding-top: 56px;
+  }
+
+  .hero-layout {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 22px;
+  }
+
+  .hero-avatar {
+    width: 120px;
+    height: 120px;
   }
 }
