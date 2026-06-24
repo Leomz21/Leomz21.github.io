@@ -1,5 +1,71 @@
-# Portafolio Académico - Leonor Molina
+# Leonor Molina — Página personal
 
-## 2026-1 (Periodo Ordinario I - 2026)
+Sitio web personal de **Leonor Molina**, estudiante de Ingeniería en Ciencias de la Computación en la Universidad de Especialidades Espíritu Santo (UEES). Reúne en una sola página mi perfil, stack técnico, proyectos universitarios, materias, logros y formas de contacto.
 
-## [Lenguajes de Programación](./Lenguajes%20De%20Programaci%C3%B3n/)
+🔗 **Sitio en vivo:** [leomz21.github.io](https://leomz21.github.io)
+
+## Descripción
+
+Es una página estática de una sola vista (*single page*), con navegación superior que lleva a las distintas secciones dentro de la misma página: Sobre mí, Stack, Proyectos, Materias, Logros y Contacto. El diseño busca una estética limpia y profesional en tonos celeste, blanco y lila.
+
+## Tecnologías
+
+- HTML5
+- CSS3 (variables CSS, diseño responsive)
+- JavaScript (sin frameworks)
+- [PDF.js](https://mozilla.github.io/pdf.js/) para la vista previa de los certificados
+- Fuente [Inter](https://fonts.google.com/specimen/Inter) vía Google Fonts
+- Publicado con [GitHub Pages](https://pages.github.com/)
+
+## Estructura del proyecto
+
+```
+.
+├── index.html                  # Página principal
+├── README.md
+└── assets/
+    ├── css/
+    │   └── style.css           # Estilos del sitio
+    ├── js/
+    │   └── main.js             # Menú, materias, modal de certificados
+    ├── img/
+    │   ├── perfil/             # Foto de perfil
+    │   └── logros/             # Insignia de AWS Academy
+    └── docs/
+        └── certificados/       # Certificados en PDF
+```
+
+## Secciones
+
+- **Sobre mí** — perfil académico y áreas de interés.
+- **Stack** — lenguajes, desarrollo web, datos y herramientas, y formación complementaria.
+- **Proyectos** — trabajos destacados de la formación.
+- **Materias** — proyectos y actividades organizados por curso mediante un menú desplegable.
+- **Logros** — certificaciones y participaciones, con vista previa de los certificados.
+- **Contacto** — correo, GitHub y LinkedIn.
+
+## Ejecución local
+
+Al usar PDF.js para la vista previa de los certificados, conviene abrir el proyecto con un servidor local en lugar de hacer doble clic en `index.html` (el protocolo `file://` bloquea la carga de los PDF).
+
+Con Python:
+
+```bash
+python -m http.server 8000
+```
+
+Luego abre `http://localhost:8000` en el navegador. También puedes usar la extensión **Live Server** de VS Code.
+
+## Despliegue
+
+El sitio se publica automáticamente con GitHub Pages al hacer *push* a la rama principal del repositorio `leomz21.github.io`. Los cambios suelen reflejarse en pocos minutos.
+
+## Contacto
+
+- **Correo:** leomolinazapata@gmail.com
+- **GitHub:** [@Leomz21](https://github.com/Leomz21)
+- **LinkedIn:** [Leonor Molina](https://www.linkedin.com/in/leonor-molina-76074a2a3/)
+
+---
+
+© 2026 Leonor Molina
