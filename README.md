@@ -17,23 +17,6 @@ Es una página estática de una sola vista (*single page*), con navegación supe
 - Fuente [Inter](https://fonts.google.com/specimen/Inter) vía Google Fonts
 - Publicado con [GitHub Pages](https://pages.github.com/)
 
-## Estructura del proyecto
-
-```
-.
-├── index.html                  # Página principal
-├── README.md
-└── assets/
-    ├── css/
-    │   └── style.css           # Estilos del sitio
-    ├── js/
-    │   └── main.js             # Menú, materias, modal de certificados
-    ├── img/
-    │   ├── perfil/             # Foto de perfil
-    │   └── logros/             # Insignia de AWS Academy
-    └── docs/
-        └── certificados/       # Certificados en PDF
-```
 
 ## Secciones
 
@@ -43,18 +26,6 @@ Es una página estática de una sola vista (*single page*), con navegación supe
 - **Materias** — proyectos y actividades organizados por curso mediante un menú desplegable.
 - **Logros** — certificaciones y participaciones, con vista previa de los certificados.
 - **Contacto** — correo, GitHub y LinkedIn.
-
-## Ejecución local
-
-Al usar PDF.js para la vista previa de los certificados, conviene abrir el proyecto con un servidor local en lugar de hacer doble clic en `index.html` (el protocolo `file://` bloquea la carga de los PDF).
-
-Con Python:
-
-```bash
-python -m http.server 8000
-```
-
-Luego abre `http://localhost:8000` en el navegador. También puedes usar la extensión **Live Server** de VS Code.
 
 ## Despliegue
 
