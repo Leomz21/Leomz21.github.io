@@ -1,21 +1,17 @@
 :root {
-  /* Fondos (claros, no se tocan) */
   --bg: #fbfcff;
   --bg-soft: #f3f7fc;
   --card: #ffffff;
 
-  /* Texto */
   --text: #1f2d4a;
   --heading: #16233d;
   --muted: #5d6b84;
 
-  /* Celeste (títulos, kickers, acentos) */
   --blue: #4a97dd;
   --blue-strong: #2f82d4;
   --blue-soft: #eaf4fd;
   --blue-line: #cfe5f8;
 
-  /* Lila claro (chips alternos) */
   --lilac: #7a68c4;
   --lilac-soft: #f1edfb;
   --lilac-line: #e1d8f5;
@@ -167,6 +163,48 @@ p {
   background: var(--blue-soft);
 }
 
+/* ===== Selector de idioma debajo del header ===== */
+.language-bar {
+  background: var(--bg);
+}
+
+.language-bar-content {
+  display: flex;
+  justify-content: flex-end;
+  padding: 8px 0 0;
+}
+
+.language-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.language-btn {
+  min-height: 30px;
+  padding: 0 12px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  font-family: inherit;
+  font-size: 0.82rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.language-btn:hover {
+  color: var(--blue-strong);
+  background: var(--blue-soft);
+}
+
+.language-btn.active {
+  color: var(--blue-strong);
+  background: var(--blue-soft);
+  border-color: var(--blue-line);
+}
+
 /* Botón hamburguesa */
 .nav-toggle {
   display: none;
@@ -195,9 +233,11 @@ p {
 .nav-toggle.open span:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
 }
+
 .nav-toggle.open span:nth-child(2) {
   opacity: 0;
 }
+
 .nav-toggle.open span:nth-child(3) {
   transform: translateY(-7px) rotate(-45deg);
 }
@@ -216,7 +256,7 @@ p {
   font-family: inherit;
   cursor: pointer;
   border: 1px solid transparent;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
 .btn:hover {
@@ -263,7 +303,7 @@ p {
 
 /* ===== Hero ===== */
 .hero {
-  padding: 80px 0 36px;
+  padding: 56px 0 36px;
 }
 
 .hero-simple {
@@ -344,7 +384,7 @@ p {
   margin-bottom: 16px;
 }
 
-/* ===== Chips: lila por defecto, celeste con .chip-blue ===== */
+/* ===== Chips ===== */
 .chip-group {
   list-style: none;
   padding: 0;
@@ -355,6 +395,9 @@ p {
 }
 
 .chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   background: var(--lilac-soft);
   border: 1px solid var(--lilac-line);
   color: var(--lilac);
@@ -380,6 +423,25 @@ p {
   background: #ddeefb;
 }
 
+/* ===== Áreas de interés ===== */
+.interest-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.interest-cloud {
+  flex: 1;
+  align-content: center;
+  gap: 12px;
+  margin-top: 18px;
+  padding: 6px 0 2px;
+}
+
+.interest-cloud .chip {
+  padding: 9px 15px;
+  font-size: 0.87rem;
+}
+
 /* ===== Stack ===== */
 .tech-grid {
   display: grid;
@@ -393,6 +455,27 @@ p {
 
 .tech-card h3 {
   font-size: 1.05rem;
+  min-height: 2.35em;
+}
+
+.tech-card .chip-group {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.tech-card .chip {
+  width: 100%;
+  min-height: 38px;
+  text-align: center;
+  white-space: normal;
+}
+
+.tech-card .chip-group > .chip:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: min(100%, 150px);
 }
 
 /* ===== Proyectos ===== */
@@ -440,11 +523,42 @@ p {
 }
 
 .project-card .btn {
-  margin-top: 22px;
+  margin-top: auto;
   width: fit-content;
 }
 
-/* ===== Materias: menú desplegable personalizado (celeste) ===== */
+/* ===== Materias compactas ===== */
+.subjects-compact-section {
+  padding: 72px 0;
+}
+
+.subjects-preview-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 26px;
+  padding: 34px 36px;
+  box-shadow: var(--shadow);
+  display: grid;
+  grid-template-columns: 1.3fr auto;
+  gap: 28px;
+  align-items: center;
+}
+
+.subjects-preview-text h2 {
+  max-width: 720px;
+}
+
+.subjects-preview-text p {
+  max-width: 680px;
+  margin: 14px 0 0;
+}
+
+.subjects-preview-action {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* ===== Materias: menú desplegable personalizado ===== */
 .subjects-shell {
   padding: 26px;
 }
@@ -557,8 +671,15 @@ p {
 }
 
 @keyframes fade {
-  from { opacity: 0; transform: translateY(6px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .activity-grid {
@@ -598,7 +719,7 @@ p {
   color: #1d6ab8;
 }
 
-/* ===== Logros (acento lila) ===== */
+/* ===== Logros ===== */
 .achievements-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -607,14 +728,16 @@ p {
 
 .achievement-card {
   padding: 28px 28px 30px;
-  min-height: 250px;
+  min-height: 275px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
 .achievement-tag {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.05em;
@@ -629,10 +752,11 @@ p {
 
 .achievement-head {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 14px;
   width: 100%;
+  min-height: 58px;
 }
 
 .achievement-head h3 {
@@ -652,7 +776,8 @@ p {
 
 .achievement-card p {
   font-size: 0.93rem;
-  margin: 12px 0 20px;
+  margin: 14px 0 22px;
+  min-height: 70px;
 }
 
 .achievement-card .preview-btn {
@@ -696,6 +821,62 @@ p {
   font-size: 0.9rem;
 }
 
+/* ===== Modal de materias ===== */
+.subjects-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(24, 33, 48, 0.55);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 100;
+}
+
+.subjects-modal.show {
+  display: flex;
+}
+
+.subjects-modal-box {
+  width: min(980px, 100%);
+  max-height: min(88vh, 780px);
+  background: #fff;
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.subjects-modal-header {
+  padding: 22px 26px;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.subjects-modal-header h3 {
+  font-size: 1.35rem;
+}
+
+.subjects-modal-header p {
+  margin: 8px 0 0;
+  max-width: 620px;
+  font-size: 0.95rem;
+}
+
+.subjects-modal-body {
+  overflow: auto;
+  padding: 22px;
+  background: var(--bg-soft);
+}
+
+.subjects-modal .subjects-shell {
+  box-shadow: none;
+}
+
 /* ===== Modal de vista previa ===== */
 .preview-modal {
   position: fixed;
@@ -705,7 +886,7 @@ p {
   align-items: center;
   justify-content: center;
   padding: 20px;
-  z-index: 100;
+  z-index: 110;
 }
 
 .preview-modal.show {
@@ -819,8 +1000,13 @@ p {
   }
 
   .about-grid,
-  .contact-card {
+  .contact-card,
+  .subjects-preview-card {
     grid-template-columns: 1fr;
+  }
+
+  .subjects-preview-action {
+    justify-content: flex-start;
   }
 }
 
@@ -853,6 +1039,11 @@ p {
     padding: 12px 14px;
   }
 
+  .language-bar-content {
+    justify-content: flex-start;
+    padding: 8px 0 0;
+  }
+
   .tech-grid,
   .projects-grid,
   .activity-grid,
@@ -865,7 +1056,7 @@ p {
   }
 
   .hero {
-    padding-top: 56px;
+    padding-top: 48px;
   }
 
   .hero-layout {
@@ -877,5 +1068,48 @@ p {
   .hero-avatar {
     width: 120px;
     height: 120px;
+  }
+
+  .subjects-preview-card {
+    padding: 28px;
+  }
+
+  .subjects-modal-header {
+    padding: 20px;
+  }
+
+  .subjects-modal-body {
+    padding: 16px;
+  }
+
+  .achievement-card p {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: min(100% - 28px, 1120px);
+  }
+
+  .tech-card .chip-group {
+    grid-template-columns: 1fr;
+  }
+
+  .tech-card .chip-group > .chip:last-child:nth-child(odd) {
+    grid-column: auto;
+    width: 100%;
+  }
+
+  .hero-actions,
+  .contact-links {
+    align-items: stretch;
+  }
+
+  .hero-actions .btn,
+  .hero-mini-label,
+  .contact-links .btn,
+  .subjects-preview-action .btn {
+    width: 100%;
   }
 }
